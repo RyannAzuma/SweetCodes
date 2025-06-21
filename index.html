@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Half Anniversary Sayanggg ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated hearts background */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.7);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-title {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #f8f9fa;
+            opacity: 0.9;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .love-message {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .memories-section {
+            margin: 30px 0;
+        }
+
+        .memory-item {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            border-left: 5px solid #e17055;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .memory-item h3 {
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .memory-item p {
+            color: #636e72;
+            font-style: italic;
+        }
+
+        .interactive-section {
+            margin: 30px 0;
+        }
+
+        .love-button {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(232, 67, 147, 0.4);
+        }
+
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232, 67, 147, 0.6);
+        }
+
+        .love-button:active {
+            transform: translateY(-1px);
+        }
+
+        .surprise-message {
+            display: none;
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .countdown-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-title {
+                font-size: 2em;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .countdown-number {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated hearts background -->
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">💕 Happy Half Anniversary Sayangggg💕</h1>
+            <p class="subtitle">Untuk pacar tersayang yang selalu membuat hariku berwarna dan senyumannya yang membuat aku semakin tergila gila</p>
+        </div>
+
+        <!-- Main content -->
+        <div class="content-card">
+            <div class="love-message">
+                <p>Hai sayangggkuu yangg cantikkkk ❤️</p>
+                <br>
+                <p>Hari ini genap <span class="highlight">6 bulan</span> kita bersama, dan setiap hari bersamamu terasa seperti mimpi yang sangat indah yang rasanya aku gamau bangun dari dalam mimpi tersebut.</p>
+                <br>
+                <p>Terima kasih sudah menjadi <span class="highlight">alasan terbaikku untuk tersenyum</span> setiap hari. Terima kasih sudah menjadi rumah yang paling nyaman untukku pulang. Terima kasih sudah mencintaiku dengan sepenuh hatimu.</p>
+                <br>
+                <p>Enam bulan mungkin terdengar sebentar, tapi bagiku sudah cukup untuk membuatku yakin bahwa <span class="highlight">kamu adalah orang yang tepat</span> untuk berbagi cerita sisa hidupku.</p>
+                <br>
+                <p>Aku selalu sayang kamu, lebih dari yang bisa kata-kata ungkapkan. 💖</p>
+            </div>
+
+            <!-- Memories section -->
+            <div class="memories-section">
+                <h2 style="color: #2d3436; margin-bottom: 20px;">Kenangan Indah Kita 🌟</h2>
+                
+                <div class="memory-item">
+                    <h3>🎉 Awal Kisah Ini</h3>
+                    <p>"Masih ingat sayangg gimana awal dari semua ini, tentunya dari keisengan yang lama kelamaan tumbuh rasa yang ternyata semanis ini, konon katanya perasaan ini nama Cinta. Awalnya akuu selalu menyangkal perasaan ini karena hampir gapantes orang kaya aku jatuh cinta, apalagi sama sayanggkuu yangg baikk dan cantikk inii (walau disangkal terus sih sama orangnya)."</p>
+                </div>
+                
+                <div class="memory-item">
+                    <h3>🌙 Malam-malam Kita</h3>
+                    <p>"Call sampai larut malam, ngobrol tentang apapun mulai dari hal random dan terkadang tentang mimpi-mimpi kita. Suaramu selalu jadi pengantar tidur terbaik."</p>
+                </div>
+                
+                <div class="memory-item">
+                    <h3>💌 Pesan-pesan Manis</h3>
+                    <p>"Good morning dan good night setiap hari. Chat random yang bikin ketawa. Semua pesan dari sayangg selalu bikin harikuu jadi lebih baik."</p>
+                </div>
+
+                <div class="memory-item">
+                    <h3>🤍 Harapan dari Aku</h3>
+                    <P>"Akuu selalu berharap kita berdua sukses bersama sama di kemudian hari, tentunya masih dengan perasaan yang sama seperti sekarang, dengan rasa sayangg yang gapernah berkurang yang ada malah semakin bertambah rasa sayangg akuu ke sayangggkuu"</P>
+                </div>
+            </div>
+
+            <!-- Interactive section -->
+            <div class="interactive-section">
+                <h3 style="color: #2d3436; margin-bottom: 20px;">Klik untuk kejutan! 💝</h3>
+                <button class="love-button" onclick="showSurprise()">💖 Pesan Spesial</button>
+                <button class="love-button" onclick="showPromise()">🤝 Janji Ku</button>
+                <button class="love-button" onclick="showFuture()">🌈 Masa Depan Kita</button>
+                
+                <div id="surprise" class="surprise-message">
+                    <h3>💖 Pesan Spesial Untukmu</h3>
+                    <p>Kamu tau nggak? Setiap kali kamu tersenyum, dunia jadi lebih cerah. Setiap kali kamu ketawa, hatiku ikut bahagia. Kamu adalah hadiah terbaik yang pernah Tuhan berikan untukku. I love you so much sayanggkuu! 💕</p>
+                </div>
+                
+                <div id="promise" class="surprise-message">
+                    <h3>🤝 Janjiku Untukmu</h3>
+                    <p>Aku janji akan selalu ada untukmu, di saat senang maupun sedih. Aku janji akan mencintaimu dengan sepenuh hati, dan menjaga hatimu seperti aku menjaga hatiku sendiri. Aku janji kita akan membuat lebih banyak kenangan indah bersama. 💍</p>
+                </div>
+                
+                <div id="future" class="surprise-message">
+                    <h3>🌈 Masa Depan Kita</h3>
+                    <p>Aku nggak sabar untuk melewati lebih banyak half anniversary bersama. Nggak sabar untuk anniversary pertama, kedua, dan seterusnya. Nggak sabar untuk membangun mimpi-mimpi kita bersama. Kamu dan aku, forever and always! 🏡💑</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown section -->
+        <div class="countdown-section">
+            <h2 style="color: #fff; margin-bottom: 10px;">⏰ Sudah Berapa Lama Kita Bersama?</h2>
+            <p style="color: #f8f9fa; opacity: 0.9;">Menghitung setiap detik kebahagiaan bersamamu...</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="months">6</span>
+                    <span class="countdown-label">Bulan</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💝 Dibuat dengan cinta untuk pacarrrr tersayang 💝</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Happy Half Anniversary, Sayangggg! 🎉💕</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 800);
+
+        // Interactive functions
+        function hideAllSurprises() {
+            document.getElementById('surprise').style.display = 'none';
+            document.getElementById('promise').style.display = 'none';
+            document.getElementById('future').style.display = 'none';
+        }
+
+        function showSurprise() {
+            hideAllSurprises();
+            document.getElementById('surprise').style.display = 'block';
+            document.getElementById('surprise').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showPromise() {
+            hideAllSurprises();
+            document.getElementById('promise').style.display = 'block';
+            document.getElementById('promise').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showFuture() {
+            hideAllSurprises();
+            document.getElementById('future').style.display = 'block';
+            document.getElementById('future').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Countdown timer (you can set your actual anniversary date here)
+        function updateCountdown() {
+            // Set your anniversary date here (6 months ago from today)
+            const anniversaryDate = new Date(2024, 11, 22, 14, 46);
+            anniversaryDate.setMonth(anniversaryDate.getMonth() - 6);
+            
+            const now = new Date();
+            const timeDiff = now - anniversaryDate;
+            
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const totalDays = days;
+            const remainingDays = totalDays % 30;
+            
+            document.getElementById('days').textContent = remainingDays;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+
+        // Update countdown every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effect to the main title
+            document.querySelector('.main-title').addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'pulse 2s ease-in-out infinite';
+                }, 10);
+            });
+        });
+    </script>
+</body>
+</html>
